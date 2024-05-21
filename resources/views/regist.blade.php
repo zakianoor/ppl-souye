@@ -23,8 +23,6 @@
     </ul>
     <div class="navbar">
       <ul>
-        <li><a href="{{ route('login') }}"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-        <li><a href="logout.php"><i class="fa fa-sign-in-alt" aria-hidden="true"></i></a></li>
       </ul>
     </div>
   </nav>
