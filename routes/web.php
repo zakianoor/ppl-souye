@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BestSellerController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CollabController;
+use App\Http\Controllers\SaleController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,30 +22,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::middleware(['alreadyLoggedIn'])->group(function () {
+    Route::get('/login', [AuthController::class, 'loginIndex'])->name('login');
+    Route::get('/regist', [AuthController::class, 'registIndex'])->name('regist');
+    Route::post('/regist', [AuthController::class, 'registerBuyer'])->name('regist.register');
+    Route::post('/login', [AuthController::class, 'loginBuyer'])->name('login.loginBuyer');
 });
 
-Route::get('/navbar', function () {
-    return view('navbar');
+Route::middleware(['isLoggedIn'])->group(function () {
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/', [ShopController::class, 'index'])->name('shop');
+    Route::get('/bestseller', [BestSellerController::class, 'index'])->name('bestseller');
+    Route::get('/collab', [CollabController::class, 'index'])->name('collab');
+    Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::get('/sale', [SaleController::class, 'index'])->name('sale');
+
+    Route::get('/user', [UserController::class, 'profileUser'])->name('user');
+    Route::post('/addToCart', [CartController::class, 'addToCart'])->name('addToCart');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+    Route::delete('/cart/{id}', [CartController::class, 'removeCart'])->name('removeCart');
+    Route::post('/processCheckout', [CheckoutController::class, 'processCheckout'])->name('processCheckout');
+    Route::get('/checkoutSuccess', function () {
+        return view('done');
+    })->name('done');
 });
 
-Route::get('/footer', function () {
-    return view('footer');
-});
 
-Route::get('/base', function () {
-    return view('base');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('test');
+// });
