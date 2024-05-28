@@ -7,6 +7,7 @@
 $grand_total = 0; // Initialize grand total
 @endphp
 
+@if ($carts->isNotEmpty())
 <section class="product">
     <div class="content">
         <h2 class="product-category">cart</h2>
@@ -14,7 +15,6 @@ $grand_total = 0; // Initialize grand total
         <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
         <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
         <div class="product-container">
-            @if ($carts->isNotEmpty())
             @foreach($carts as $cart)
             <div class="product-card">
                 <div class="product-image">
@@ -38,19 +38,32 @@ $grand_total = 0; // Initialize grand total
                 </div>
             </div>
             @endforeach
-            @else
-            <center>your cart is still empty!</center>
-            @endif
         </div>
     </div>
 </section>
 <section class="grand-total">
     <div class="content">
-        <h2 class="product-category">grand Total : <span>Rp{{ number_format($grand_total) }}</span></h2>
+        <h2 class="product-category">grand total : <span>Rp{{ number_format($grand_total) }}</span></h2>
         <div>
             <a class="btn-cart" href="{{ route('home') }}">continue shopping<i class="fa fa-cart-plus"></i></a>
             <a class="btn-cart" href="{{ route('checkout') }}">proceed to checkout<i class="fa fa-chevron-circle-right"></i></a>
         </div>
     </div>
 </section>
+@else
+<section class="product">
+    <div class="content">
+        <h2 class="product-category">cart</h2>
+        <h4 class="cart-products">your shopping cart contains: <span>{{ $totalCart }} products.</span></h4>
+    </div>
+</section>
+<section class="grand-total">
+    <div class="content">
+        <h2 class="product-category">shop now!</h2>
+        <div>
+            <a class="btn-cart" href="{{ route('home') }}">continue shopping<i class="fa fa-cart-plus"></i></a>
+        </div>
+    </div>
+</section>
+@endif
 @endsection
