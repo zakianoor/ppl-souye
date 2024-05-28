@@ -1,3 +1,7 @@
+function home() {
+    location.replace("/home") 
+}
+
 const productContainers = [...document.querySelectorAll('.offers-container')];
 const nextBtn = [...document.querySelectorAll('.next-btn')];
 const prevBtn = [...document.querySelectorAll('.prev-btn')];

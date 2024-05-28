@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-  <title>Sign In | {{ config('app.name') }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
+@section('title', 'sign in')
 
-<body>
-  <nav>
-    <img src="assets/img/logo.png">
-    <ul>
-      <li><a href="{{ route('shop') }}">shop</a></li>
-      <li><a href="{{ route('bestseller') }}">best sellers</a></li>
-      <li><a href="{{ route('collab') }}">x DEAR지아</a></li>
-      <div class="sale"><li><a href="{{ route('sale') }}">sale</a></li></div>
-      <li><a href="{{ route('about') }}">about</a></li>
-    </ul>
-    <div class="navbar">
-      <ul>
-      </ul>
-    </div>
-  </nav>
+@section('content')
   <section class="login">
     <div class="form-container">
       <form action="{{ route('login.loginBuyer') }}" method="post">
         @csrf
 
-        <div class="lexend-exa"><h2>Sign In</h2></div>
+        <h2>Sign In</h2>
         <input type="text" name="usn" placeholder="username" required=" ">
         <input type="password" name="pass" placeholder="password" required=" ">
         <input type="submit" name="login" value="sign in" class="form-btn">
@@ -45,6 +22,4 @@
       </form>
     </div>
   </section>
-
-
-  @include('includes.footer')
+  @endsection

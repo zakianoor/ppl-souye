@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Checkout')
+@section('title', 'checkout')
 
 @section('content')
 @php
@@ -9,8 +9,8 @@ $grand_total = 0; // Initialize grand total
 
 <section class="product">
   <div class="content">
-    <h2 class="product-category">Checkout</h2>
-    <h4 class="cart-products">Your shopping cart contains:
+    <h2 class="product-category">checkout</h2>
+    <h4 class="cart-products">your shopping cart contains:
       <span>{{ $totalCart }} products.
     </h4>
     <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
@@ -24,21 +24,21 @@ $grand_total = 0; // Initialize grand total
           <form id="removeForm{{ $cart->id_cart }}" action="{{ route('removeCart', ['id' => $cart->id_cart]) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" onclick="return confirm('Remove item from cart?')" class="card-btn">Remove</button>
+            <button type="submit" onclick="return confirm('Remove item from cart?')" class="card-btn">remove</button>
           </form>
 
         </div>
         <div class="product-info">
           <h2 class="product-brand">{{ $cart->nama_artis }}</h2>
           <p class="product-short-description">{{ $cart->nama_brg }}</p>
-          <p class="product-short-description">Quantity: {{ $cart->qty_brg }}</p>
+          <p class="product-short-description">quantity: {{ $cart->qty_brg }}</p>
           @php
           // Convert harga_brg to float before calculation
           $harga_brg = floatval($cart->harga_brg);
           $sub_total = $harga_brg * $cart->qty_brg;
           $grand_total += $sub_total; // Update grand total
           @endphp
-          <span class="price">${{ number_format($sub_total) }}</span>
+          <span class="price">Rp{{ number_format($sub_total) }}</span>
         </div>
       </div>
       @endforeach
@@ -49,40 +49,35 @@ $grand_total = 0; // Initialize grand total
 </section>
 <section class="grand-total">
   <div class="content">
-    <h2 class="product-category">Grand Total : <span>${{ number_format($grand_total) }}</span></h2>
+    <h2 class="product-category">grand total : <span>Rp{{ number_format($grand_total) }}</span></h2>
     <div>
       <a class="btn-cart" href="{{ route('cart') }}">Back to Cart<i class="fa fa-cart-arrow-down"></i></a>
-      <a class="btn-cart" href="{{ route('products') }}">Continue Shopping<i class="fa fa-forward"></i></a>
+      <a class="btn-cart" href="{{ route('shop') }}">Continue Shopping<i class="fa fa-forward"></i></a>
     </div>
   </div>
 </section>
-<section class="login">
+<section class="checkout">
   <div class="form-container">
     <form action="{{ route('processCheckout') }}" method="post">
       @csrf
 
       <input type="hidden" name="grand_total" value="{{ $grand_total }}" />
       <h2>Complete Your Shiping Address</h2>
-      <input type="text" name="nama" placeholder="Enter Your Full Name" required=" ">
-      <input type="text" name="alamat" placeholder="Enter Your Address" required=" ">
-      <input type="text" name="nohp" placeholder="Enter Your Mobile number" required=" ">
+      <input type="text" name="nama" placeholder="full name" required=" ">
+      <input type="text" name="nohp" placeholder="phone number" required=" ">
+      <input type="text" name="alamat" placeholder="address (city, province, zip code, etc)" required=" ">
 
       <h2>Complete Your Payment</h2>
-      <input type="text" name="namarek" placeholder="Enter Your Name on Card" required=" ">
-      <input type="text" name="norek" placeholder="Enter Your Card Number" required=" ">
+      <input type="text" name="namarek" placeholder="name on card" required=" ">
+      <input type="text" name="norek" placeholder="card number" required=" ">
       <div>
         <select type="select" name="bank" required>
           <option>-- Choose Your Bank</option>
           <option value="MDR-BA">Mandiri</option>
           <option value="BCA-BA">BCA</option>
-          <option value="CMB-BA">CIMB</option>
-          <option value="BNI-BA">BNI</option>
-          <option value="JBR-BA">Bank Jabar</option>
-          <option value="DNM-BA">Danamon</option>
           <option value="BRI-BA">BRI</option>
-          <option value="PMT-BA">Permata</option>
       </div>
-      <input type="submit" name="order_btn" value="Checkout Now!" class="form-btn">
+      <input type="submit" name="order_btn" value="checkout now!" class="form-btn">
     </form>
   </div>
 </section>

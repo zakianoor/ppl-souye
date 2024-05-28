@@ -6,6 +6,7 @@ use App\Http\Controllers\BestSellerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CollabController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
@@ -31,7 +32,8 @@ Route::middleware(['alreadyLoggedIn'])->group(function () {
 
 Route::middleware(['isLoggedIn'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/', [ShopController::class, 'index'])->name('shop');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
     Route::get('/bestseller', [BestSellerController::class, 'index'])->name('bestseller');
     Route::get('/collab', [CollabController::class, 'index'])->name('collab');
     Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -39,6 +41,7 @@ Route::middleware(['isLoggedIn'])->group(function () {
 
     Route::get('/user', [UserController::class, 'profileUser'])->name('user');
     Route::post('/addToCart', [CartController::class, 'addToCart'])->name('addToCart');
+    Route::post('/addToCartSale', [CartController::class, 'addToCartSale'])->name('addToCartSale');
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
     Route::delete('/cart/{id}', [CartController::class, 'removeCart'])->name('removeCart');

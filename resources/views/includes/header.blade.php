@@ -13,10 +13,11 @@
 
 <body>
     <nav>
-        <img src="assets/img/logo.png">
+        <a href="{{ route('home') }}" ><img src="assets/img/logo.png"></a> 
+        <!-- <img src="assets/img/logo.png"> -->
         <ul>
             <li><a href="{{ route('shop') }}">shop</a></li>
-            <li><a href="{{ route('bestseller') }}">best sellers</a></li>
+            <li><a href="{{ route('home') }}#bestseller">best sellers</a></li>
             <li><a href="{{ route('collab') }}">x DEAR지아</a></li>
             <div class="sale"><li><a href="{{ route('sale') }}">sale</a></li></div>
             <li><a href="{{ route('about') }}">about</a></li>
@@ -24,7 +25,7 @@
         </ul>
         <div class="navbar">
             <ul>
-                <li><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i> </a> Hi, {{ Session::get('user')->usn_user ?? ''}}!</li>
+                <li style="font-weight: 600;"><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i> </a> Hi, {{ Session::get('user')->usn_user ?? ''}}!</li>
 
                 @php
                 $row_count = DB::table('cart')->where('status', '1')->where('id_user', Session::get('user')->id_user ?? '0')->count();

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Checkout Success')
+@section('title', 'checkout success')
 
 @section('content')
 <section class="intro">
