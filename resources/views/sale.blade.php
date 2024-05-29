@@ -3,7 +3,7 @@
 @section('title', 'sale')
 
 @section('content')
-<section class="banner">
+<section class="banner-sale">
     <div class="sale">
         <div class="content">
             <h1>matcha edition</h1>

@@ -801,18 +801,18 @@ hr.solid {
     transition: ease 0.5s;
 }
 
-.banner {
+.banner-sale {
     background-color: #859463;
     opacity: 90%;
 }
 
-.banner .sale {
+.banner-sale .sale {
     display: flex;
     align-items: center;
     justify-content: center
 }
 
-.banner .sale .content h1 {
+.banner-sale .sale .content h1 {
     color: #FDFBF9;
     margin-left: 35px;
     font-size: 42px;
@@ -820,15 +820,15 @@ hr.solid {
 
 }
 
-.banner .sale .content {
+.banner-sale .sale .content {
     padding: 0;
 }
 
-.banner .sale .content img {
+.banner-sale .sale .content img {
     width: 70%;
 }
 
-.banner .sale .content p {
+.banner-sale .sale .content p {
     text-align: left;
     color: #FDFBF9;
     padding: 20px;
@@ -939,6 +939,19 @@ button.done-btn {
     width: 405px;
 }
 
+.collab-content .home img {
+    margin-left: 112px;
+    margin-top: 20px;
+    width: 372px;
+}
+
+.collab-content .content .banner img {
+    width: 92.5%;
+    margin-left: -66px;
+    margin-bottom: 40px;
+    margin-right: -50px;
+}
+
 .collab-container {
     padding: 0 2vw;
     display: grid;
@@ -948,7 +961,7 @@ button.done-btn {
 }
 
 .collab-container .product-card {
-    height: 310px;
+    height: 260px;
 }
 
 .collab-container .product-info {
@@ -974,4 +987,75 @@ button.done-btn {
     font-size: 16px;
     color: #FDFBF9;
     text-align: center;
+}
+
+.banner-about .about .content {
+    padding: 0;
+}
+
+.banner-about .about .content img {
+    width: 84%;
+    border-radius: 10px;
+}
+
+.banner-about .about .philosophy {
+    margin-top: 20px;
+    margin-left: 122px;
+    background: #D8D6D6;
+    width: 84%;
+    align-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner-about .about .philosophy h2 {
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 32px;
+    color: #291A09;
+    opacity: 55%;
+    text-align: center;
+}
+
+.banner-about .about .philosophy p {
+    text-align: left;
+    color: #291A09;
+    padding: 20px;
+    opacity: 55%;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+.banner-about .about .founder {
+    margin-left: 90px;
+}
+
+.banner-about .about .founder h2 {
+    font-weight: 700;
+    margin: 40px 0;
+    color: #291A09;
+    text-align: center;
+    width: 94%;
+    font-size: 32px;
+    color: #291A09;
+    opacity: 55%;
+}
+
+.banner-about .about .collab h2 {
+    font-weight: 600;
+    margin: 30px 0px -25px 120px;
+    text-align: left;
+    width: 94%;
+    font-size: 24px;
+    color: #291A09;
+    opacity: 55%;
+}
+
+.banner-about .about .founder img {
+    padding: 0 2vw;
+    width: 31%;
+    border: 10px;
+    align-items: center;
+    margin-bottom: 80px;
 }

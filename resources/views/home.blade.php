@@ -18,6 +18,43 @@
     <img src="assets/img/homejia2.jpg" style=" margin-right: 125px;">
   </div>
 </section>
+<section class="banner-about">
+  <div class="about">
+      <div class="collab">
+        <h2>DEAR지아’s Night Skincare Routine</h2>
+      </div>
+  </div>
+</section>
+<section class="collab-content">
+  <div class="home">
+      <img src="assets/img/home1.jpg">
+  </div>
+  <div class="content">
+      <div class="banner">
+        <img src="assets/img/home2.jpg">
+      </div>
+      <div class="collab-container">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/img/cream1.jpg" class="product-thumb" alt="">
+            <button class="card-btn">Rp109000</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/img/moist2.jpg" class="product-thumb" alt="">
+            <button class="card-btn">Rp249000</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/img/other1.jpg" class="product-thumb" alt="">
+            <button class="card-btn">Rp79000</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
 <section class="product" id="bestseller">
   <div class="content">
     <h2 class="product-category">Best Sellers!</h2>
