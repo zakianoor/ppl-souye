@@ -21,15 +21,10 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="/assets/img/{{ $product->img_brg }}" class="product-thumb" alt="">
-                    <form action="{{ route('addToCartCollab') }}" method="post">
+                    <form action="" method="">
                         @csrf
                         <fieldset>
-                            <input type="hidden" name="id_brg" value="{{ $product->id_brg }}" />
-                            <input type="hidden" name="nama_brg" value="{{ $product->nama_brg }}" />
-                            <input type="hidden" name="harga_brg" value="{{ $product->harga_brg }}" />
-                            <input type="hidden" name="img_brg" value="{{ $product->img_brg }}">
-                            <input type="hidden" name="currency_code" value="IDR" />
-                            <input type="submit" name="add_to_cart" value="Add to cart" class="card-btn" onclick="return confirm('Product added to cart!')" />
+                            <input type="text" name="price" value="Rp{{ $product->harga_brg }}" class="card-btn"/>
                         </fieldset>
                     </form>
                 </div>
