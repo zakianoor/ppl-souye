@@ -23,6 +23,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/bestseller', [BestSellerController::class, 'index'])->name('bestseller');
+Route::get('/collab', [CollabController::class, 'index'])->name('collab');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/sale', [SaleController::class, 'index'])->name('sale');
+
 Route::middleware(['alreadyLoggedIn'])->group(function () {
     Route::get('/login', [AuthController::class, 'loginIndex'])->name('login');
     Route::get('/regist', [AuthController::class, 'registIndex'])->name('regist');
@@ -32,16 +39,11 @@ Route::middleware(['alreadyLoggedIn'])->group(function () {
 
 Route::middleware(['isLoggedIn'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-    Route::get('/bestseller', [BestSellerController::class, 'index'])->name('bestseller');
-    Route::get('/collab', [CollabController::class, 'index'])->name('collab');
-    Route::get('/about', [AboutController::class, 'index'])->name('about');
-    Route::get('/sale', [SaleController::class, 'index'])->name('sale');
 
     Route::get('/user', [UserController::class, 'profileUser'])->name('user');
     Route::post('/addToCart', [CartController::class, 'addToCart'])->name('addToCart');
     Route::post('/addToCartSale', [CartController::class, 'addToCartSale'])->name('addToCartSale');
+    Route::post('/addToCartCollab', [CartController::class, 'addToCartCollab'])->name('addToCartCollab');
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
     Route::delete('/cart/{id}', [CartController::class, 'removeCart'])->name('removeCart');

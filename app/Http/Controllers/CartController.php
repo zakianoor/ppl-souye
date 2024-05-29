@@ -51,6 +51,21 @@ class CartController extends Controller
         return redirect()->route('sale');
     }
 
+    public function addToCartCollab(Request $request)
+    {
+        Cart::create([
+            'nama_brg' => $request->nama_brg,
+            'harga_brg' => $request->harga_brg,
+            'qty_brg' => 1,
+            'img_brg' => $request->img_brg,
+            'id_user' => Session::get('user')->id_user,
+            'id_brg' => $request->id_brg,
+            'status' => 1,
+            'id_transaksi' => null
+        ]);
+
+        return redirect()->route('collab');
+    }
 
     public function removeCart($id)
     {

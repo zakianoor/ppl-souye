@@ -267,7 +267,7 @@ button.login-btn {
 .head .message {
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 .head .message img {
     width: 28%;
@@ -889,4 +889,68 @@ button.done-btn {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+}
+
+.head .collab {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1275px;
+}
+.head .collab img {
+    width: 50%;
+    object-fit: cover;
+    flex: 50%;
+}
+
+.head .collab .content {
+    padding: 0;
+}
+
+.head .collab .content h1 {
+    text-align: center;
+    color: #FDFBF9;
+    font-weight: 500;
+    padding: 0;
+    font-size: 48px;
+    position: absolute;
+    top: 122.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.collab-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.collab-content .content{
+    padding: 20px 0;
+}
+
+.collab-content .content {
+    grid-row-start: span 3;
+}
+
+.collab-content .image img {
+    margin-left: 112px;
+    margin-top: 20px;
+    width: 405px;
+}
+
+.collab-container {
+    padding: 0 2vw;
+    display: grid;
+    grid-row-start: span 3;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
+}
+
+.collab-container .product-card {
+    height: 310px;
+}
+
+.collab-container .product-info {
+    height: 50px;
 }

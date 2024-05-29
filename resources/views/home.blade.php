@@ -3,7 +3,6 @@
 @section('title', 'home')
 
 @section('content')
-
 <section class="head">
   <div class="message">
     <img src="assets/img/homejia1.jpg" style=" margin-left: 125px;">
