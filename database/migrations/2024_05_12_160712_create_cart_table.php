@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('img_brg');
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_brg');
-            $table->integer('status')->nullable();
+            $table->string('status')->nullable();
             $table->unsignedBigInteger('id_transaksi')->nullable();
 
-            $table->foreign('id_user')->references('id_user')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_brg')->references('id_brg')->on('barang');
             $table->foreign('id_transaksi')->references('id_transaksi')->on('transaksi');
         });

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('nohp_buyer');
             $table->string('order')->nullable();
 
-            $table->foreign('id_user')->references('id_user')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

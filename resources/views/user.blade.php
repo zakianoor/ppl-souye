@@ -7,7 +7,7 @@
   <div class="form-container">
     <form action="#" method="post">
       <h2>Your Account</h2>
-      <p class="username">Username : {{ Session::get('user')->usn_user }}</p>
+      <p class="username">Username : {{ Auth::user()->name }}</p>
     </form>
   </div>
 </section>

@@ -162,7 +162,7 @@ nav .navbar ul li a:hover {
     width: 420px;
 }
 
-.login .form-container form input, .form-container form select {
+.login .form-container form .form-input, .form-container form select {
     width: 100%; 
     padding:15px 15px;
     font-size: 14px;
