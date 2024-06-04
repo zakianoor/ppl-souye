@@ -30,22 +30,29 @@
         </ul>
         <div class="navbar">
             <ul>
-                <li style="font-weight: 600;"><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i> </a> Hi, {{ explode(' ', Auth::user()->name ?? '')[0] }}!</li>
+                @auth
+                    <li style="font-weight: 600;"><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i> </a> Hi, {{ explode(' ', Auth::user()->name ?? '')[0] }}!</li>
 
-                @php
-                $row_count = DB::table('cart')->where('status', '1')->where('id_user', Session::get('user')->id_user ?? '0')->count();
-                @endphp
+                    @php
+                    $row_count = DB::table('cart')->where('status', '1')->where('id_user', Auth::id() ?? '0')->count();
+                    @endphp
 
-                <li style="margin-top: 10px;"><a href="{{ route('cart') }}"><span>{{ $row_count }}</span><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                    <li style="margin-top: 10px;"><a href="{{ route('cart') }}"><span>{{ $row_count }}</span><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 
-                <li style="margin-top: 10px;">
-                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                        @csrf
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                            <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
-                        </a>
-                    </form>
-                </li>
+                    <li style="margin-top: 10px;">
+                        <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                            @csrf
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
+                            </a>
+                        </form>
+                    </li>
+                @endauth
+
+                @guest
+                <li style="font-weight: 600;"><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i></a>Hi, Guest</li>
+                <li style="margin-top: 10px;"><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                @endguest
             </ul>
         </div>
     </nav>

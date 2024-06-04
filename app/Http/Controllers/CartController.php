@@ -12,7 +12,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        $carts = Cart::where('id_user', Auth::id())->where('status', 'in_cart')->get();
+        $carts = Cart::where('id_user', Auth::id())->where('status', 1)->get();
         $totalCart = $carts->count();
 
         return view('cart', [
@@ -36,7 +36,7 @@ class CartController extends Controller
         $cart->img_brg = $product->img_brg;
         $cart->id_user = Auth::id(); // Assuming the user is logged in
         $cart->id_brg = $product->id_brg;
-        $cart->status = 'in_cart';
+        $cart->status = 1;
         $cart->id_transaksi = null;
 
         $cart->save();
@@ -51,7 +51,7 @@ class CartController extends Controller
             'harga_brg' => $request->harga_brg,
             'qty_brg' => 1,
             'img_brg' => $request->img_brg,
-            'id_user' => Session::get('user')->id_user,
+            'id_user' => Auth::id(),
             'id_brg' => $request->id_brg,
             'status' => 1,
             'id_transaksi' => null
@@ -67,7 +67,7 @@ class CartController extends Controller
             'harga_brg' => $request->harga_brg,
             'qty_brg' => 1,
             'img_brg' => $request->img_brg,
-            'id_user' => Session::get('user')->id_user,
+            'id_user' => Auth::id(),
             'id_brg' => $request->id_brg,
             'status' => 1,
             'id_transaksi' => null
