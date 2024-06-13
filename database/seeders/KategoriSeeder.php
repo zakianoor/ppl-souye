@@ -14,19 +14,19 @@ class KategoriSeeder extends Seeder
     {
         DB::table('kategori')->insert([
             [
-                'nama_kategori' => 'Pembersih Wajah',  // untuk Face Cleanser
+                'nama_kategori' => 'moisturizer',  // untuk moisturizer
             ],
             [
-                'nama_kategori' => 'Pelembap',  // untuk Moisturizer
+                'nama_kategori' => 'oil',  // untuk oil
             ],
             [
-                'nama_kategori' => 'Tabir Surya',  // untuk Sunscreen SPF 50
+                'nama_kategori' => 'cream',  // untuk cream
             ],
             [
-                'nama_kategori' => 'Serum',  // untuk Serum Vitamin C
+                'nama_kategori' => 'mask',  // untuk mask
             ],
             [
-                'nama_kategori' => 'Krim Malam',  // untuk Night Cream
+                'nama_kategori' => 'other',  // untuk other
             ]
         ]);
     }

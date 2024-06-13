@@ -1,31 +1,99 @@
 @extends('layouts.main')
 
-@section('title', 'Shop')
+@section('title', 'shop')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        @foreach($products as $product)
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="{{ asset('images/' . $product->img_brg) }}" class="card-img-top" alt="{{ $product->nama_brg }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $product->nama_brg }}</h5>
-                        <p class="card-text">{{ $product->ket_brg }}</p>
-                        <p class="card-text"><strong>Harga: </strong>Rp {{ number_format($product->harga_brg, 0, ',', '.') }}</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <form action="{{ route('cart.add', $product->id_brg) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                                </form>
-                            </div>
-                            <small class="text-muted">Stok: {{ $product->stok_brg }}</small>
-                        </div>
-                    </div>
+
+<section class="product">
+    <div class="content">
+        <h2 class="product-category">toner</h2>
+        <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
+        <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
+        <div class="product-container">
+            @foreach($shop as $product)
+                <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/{{ $product->img_brg }}" class="product-thumb" alt="">
+                    <form action="{{ route('addToCart') }}" method="post">
+                        @csrf
+                        <fieldset>
+                        <input type="hidden" name="id_brg" value="{{ $product->id_brg }}" />
+                        <input type="hidden" name="nama_brg" value="{{ $product->nama_brg }}" />
+                        <input type="hidden" name="harga_brg" value="{{ $product->harga_brg }}" />
+                        <input type="hidden" name="img_brg" value="{{ $product->img_brg }}">
+                        <input type="hidden" name="currency_code" value="IDR" />
+                        <input type="submit" name="add_to_cart" value="Add to cart" class="card-btn" onclick="return confirm('Product added to cart!')" />
+                        </fieldset>
+                    </form>
+                </div>
+                <div class=" product-info">
+                    <p class="product-short-description">{{ $product->nama_brg }}</p>
+                    <span class="price">Rp{{ $product->harga_brg }}</span>
+                </div>
+        </div>
+            @endforeach
+    </div>
+</section>
+<section class="product">
+    <div class="content">
+        <h2 class="product-category">moisturizer</h2>
+        <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
+        <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
+        <div class="product-container">
+            @foreach($shop as $product)
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/{{ $product->img_brg }}" class="product-thumb" alt="">
+                    <form action="{{ route('addToCart') }}" method="post">
+                        @csrf
+                        <fieldset>
+                        <input type="hidden" name="id_brg" value="{{ $product->id_brg }}" />
+                        <input type="hidden" name="nama_brg" value="{{ $product->nama_brg }}" />
+                        <input type="hidden" name="harga_brg" value="{{ $product->harga_brg }}" />
+                        <input type="hidden" name="img_brg" value="{{ $product->img_brg }}">
+                        <input type="hidden" name="currency_code" value="IDR" />
+                        <input type="submit" name="add_to_cart" value="Add to cart" class="card-btn" onclick="return confirm('Product added to cart!')" />
+                        </fieldset>
+                    </form>
+                </div>
+                <div class=" product-info">
+                    <p class="product-short-description">{{ $product->nama_brg }}</p>
+                    <span class="price">Rp{{ $product->harga_brg }}</span>
                 </div>
             </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
-</div>
+</section>
+<section class="product">
+    <div class="content">
+        <h2 class="product-category">serum</h2>
+        <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
+        <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
+        <div class="product-container">
+            @foreach($shop as $product)
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/{{ $product->img_brg }}" class="product-thumb" alt="">
+                    <form action="{{ route('addToCart') }}" method="post">
+                        @csrf
+                        <fieldset>
+                        <input type="hidden" name="id_brg" value="{{ $product->id_brg }}" />
+                        <input type="hidden" name="nama_brg" value="{{ $product->nama_brg }}" />
+                        <input type="hidden" name="harga_brg" value="{{ $product->harga_brg }}" />
+                        <input type="hidden" name="img_brg" value="{{ $product->img_brg }}">
+                        <input type="hidden" name="currency_code" value="IDR" />
+                        <input type="submit" name="add_to_cart" value="Add to cart" class="card-btn" onclick="return confirm('Product added to cart!')" />
+                        </fieldset>
+                    </form>
+                </div>
+                <div class=" product-info">
+                    <p class="product-short-description">{{ $product->nama_brg }}</p>
+                    <span class="price">Rp{{ $product->harga_brg }}</span>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 @endsection
