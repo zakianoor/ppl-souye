@@ -13,8 +13,9 @@ class Transaksi extends Model
 
     protected $table = 'transaksi';
 
+    protected $primaryKey = 'id_transaksi';
+
     protected $fillable = [
-        'id_transaksi',
         'total_transaksi',
         'tgl_transaksi',
         'norek_buyer',
@@ -24,6 +25,7 @@ class Transaksi extends Model
         'nama_buyer',
         'alamat_buyer',
         'nohp_buyer',
-        'order'
+        'order',
+        'snap_token'
     ];
 }

@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use Midtrans\Config;
+use Midtrans\Snap;
 
 class CheckoutController extends Controller
 {
@@ -37,11 +39,48 @@ class CheckoutController extends Controller
             'order' => null,
         ]);
 
+        // Set your Merchant Server Key
+        Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        Config::$isProduction = false;
+        // Set sanitization on (default)
+        Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        Config::$is3ds = true;
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => $request->grand_total,
+            )
+        );
+        
+        $snapToken = Snap::getSnapToken($params);
+
         Cart::where('status', 1)->where('id_user', Auth::id())->update([
             'status' => 2,
-            'id_transaksi' => $transaksi->id
+            'id_transaksi' => $transaksi->id_transaksi,
         ]);
 
-        return redirect()->route('done');
+        $transaksi->snap_token = $snapToken;
+        $transaksi->save();
+
+        return redirect()->route('payment', $transaksi->id_transaksi);
+    }
+
+    public function showPayment($id_transaksi)
+    {
+        $transaksi = Transaksi::find($id_transaksi);
+
+        if (!$transaksi) {
+            return redirect()->route('checkout')->withErrors('Transaction not found.');
+        }
+
+        return view('payment', compact('transaksi'));
+    }
+
+    public function success()
+    {
+        return view('done');
     }
 }

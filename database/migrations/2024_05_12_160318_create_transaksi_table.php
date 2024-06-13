@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('alamat_buyer');
             $table->string('nohp_buyer');
             $table->string('order')->nullable();
+            $table->ipAddress('snap_token')->nullable();
 
             $table->foreign('id_user')->references('id')->on('users');
         });
