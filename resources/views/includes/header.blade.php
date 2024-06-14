@@ -31,7 +31,7 @@
         <div class="navbar">
             <ul>
                 @auth
-                    <li style="font-weight: 600;"><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i> </a> Hi, {{ explode(' ', Auth::user()->name ?? '')[0] }}!</li>
+                    <li style="font-weight: 600;"><a href="{{ route('profile.edit') }}"><i class="fa fa-user" aria-hidden="true"></i> </a> Hi, {{ explode(' ', Auth::user()->name ?? '')[0] }}!</li>
 
                     @php
                     $row_count = DB::table('cart')->where('status', '1')->where('id_user', Auth::id() ?? '0')->count();
@@ -50,7 +50,7 @@
                 @endauth
 
                 @guest
-                <li style="font-weight: 600;"><a href="{{ route('user') }}"><i class="fa fa-user" aria-hidden="true"></i></a>Hi, Guest</li>
+                <li style="font-weight: 600;"><a href="{{ route('profile.edit') }}"><i class="fa fa-user" aria-hidden="true"></i></a>Hi, Guest</li>
                 <li style="margin-top: 10px;"><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 @endguest
             </ul>

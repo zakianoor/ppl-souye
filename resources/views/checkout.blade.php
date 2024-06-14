@@ -66,18 +66,7 @@ $grand_total = 0; // Initialize grand total
       <input type="text" name="nama" placeholder="full name" required=" ">
       <input type="text" name="nohp" placeholder="phone number" required=" ">
       <input type="text" name="alamat" placeholder="address (city, province, zip code, etc)" required=" ">
-
-      <h2>Complete Your Payment</h2>
-      <input type="text" name="namarek" placeholder="name on card" required=" ">
-      <input type="text" name="norek" placeholder="card number" required=" ">
-      <div>
-        <select type="select" name="bank" required>
-          <option>-- Choose Your Bank</option>
-          <option value="MDR-BA">Mandiri</option>
-          <option value="BCA-BA">BCA</option>
-          <option value="BRI-BA">BRI</option>
-      </div>
-      <input type="submit" name="order_btn" value="checkout now!" class="form-btn">
+      <input type="submit" name="order_btn" value="payment now!" class="form-btn">
     </form>
   </div>
 </section>

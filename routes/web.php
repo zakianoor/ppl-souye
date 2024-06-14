@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/user', [UserController::class, 'profileUser'])->name('user');
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('/addToCart', [CartController::class, 'addToCart'])->name('addToCart');
     Route::post('/addToCartSale', [CartController::class, 'addToCartSale'])->name('addToCartSale');
     Route::post('/addToCartCollab', [CartController::class, 'addToCartCollab'])->name('addToCartCollab');
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
