@@ -3,17 +3,17 @@
 @section('title', 'Your Account')
 
 @section('content')
-<section class="checkout">
+<section class="payment">
   <div class="form-container">
     <form>
       <h2>Order Detail</h2>
-      <p><strong>Transaction ID:</strong> {{ $transaksi->id_transaksi }}</p>
-      <p><strong>Total Transaction:</strong> {{ $transaksi->total_transaksi }}</p>
-      <p><strong>Transaction Date:</strong> {{ $transaksi->tgl_transaksi }}</p>
-      <p><strong>Buyer Name:</strong> {{ $transaksi->nama_buyer }}</p>
-      <p><strong>Buyer Address:</strong> {{ $transaksi->alamat_buyer }}</p>
-      <p><strong>Buyer Phone:</strong> {{ $transaksi->nohp_buyer }}</p>
-      <input type="button" id="pay-button" name="order_btn" value="Checkout Now!" class="form-btn">
+      <p>{{ $transaksi->nama_buyer }}</p>
+      <p>{{ $transaksi->alamat_buyer }}</p>
+      <p>{{ $transaksi->nohp_buyer }}</p>
+      <br>
+      <p><strong>date:</strong> {{ $transaksi->tgl_transaksi }}</p>
+      <p><strong>total:</strong> Rp{{ number_format($transaksi->total_transaksi) }}</p>
+      <input type="button" id="pay-button" name="order_btn" value="payment now!" class="form-btn">
     </form>
   </div>
 </section>

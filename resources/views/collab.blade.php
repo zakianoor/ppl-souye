@@ -24,7 +24,7 @@
                     <form action="" method="">
                         @csrf
                         <fieldset>
-                            <input type="text" name="price" value="Rp{{ $product->harga_brg }}" class="card-btn"/>
+                            <input type="text" name="price" value="Rp{{ number_format($product->harga_brg) }}" class="card-btn"/>
                         </fieldset>
                     </form>
                 </div>

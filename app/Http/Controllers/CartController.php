@@ -21,7 +21,7 @@ class CartController extends Controller
         ]);
     }
 
-    public function addToCart(Request $request, $id_brg)
+    public function addToCart(Request $request)
     {
         Cart::create([
             'nama_brg' => $request->nama_brg,

@@ -28,7 +28,7 @@
                 </div>
                 <div class=" product-info">
                     <p class="product-short-description">{{ $product->nama_brg }}</p>
-                    <span class="price">Rp{{ $product->harga_brg }}</span>
+                    <span class="price">Rp{{ number_format($product->harga_brg) }}</span>
                 </div>
         </div>
             @endforeach
@@ -58,7 +58,7 @@
                 </div>
                 <div class=" product-info">
                     <p class="product-short-description">{{ $product->nama_brg }}</p>
-                    <span class="price">Rp{{ $product->harga_brg }}</span>
+                    <span class="price">Rp{{ number_format($product->harga_brg) }}</span>
                 </div>
             </div>
             @endforeach
@@ -89,7 +89,7 @@
                 </div>
                 <div class=" product-info">
                     <p class="product-short-description">{{ $product->nama_brg }}</p>
-                    <span class="price">Rp{{ $product->harga_brg }}</span>
+                    <span class="price">Rp{{ number_format($product->harga_brg) }}</span>
                 </div>
             </div>
             @endforeach

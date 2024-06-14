@@ -66,7 +66,7 @@ $grand_total = 0; // Initialize grand total
       <input type="text" name="nama" placeholder="full name" required=" ">
       <input type="text" name="nohp" placeholder="phone number" required=" ">
       <input type="text" name="alamat" placeholder="address (city, province, zip code, etc)" required=" ">
-      <input type="submit" name="order_btn" value="payment now!" class="form-btn">
+      <input type="submit" name="order_btn" value="checkout now!" class="form-btn">
     </form>
   </div>
 </section>

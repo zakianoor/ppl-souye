@@ -754,7 +754,6 @@ hr.solid {
     margin: 50px 0;
 }
 
-
 .checkout .form-container {
     min-height: 78vh;
     display: flex;
@@ -1071,4 +1070,65 @@ button.done-btn {
     border: 10px;
     align-items: center;
     margin-bottom: 80px;
+}
+
+
+.payment .form-container {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #FDFBF9;
+}
+
+.payment .form-container h2 {
+    color: #888783;
+}
+
+.payment .form-container form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    background: #DCDAD6;
+    text-align: center;
+    width: 420px;
+}
+
+.payment .form-container form input, .form-container form select {
+    width: 100%; 
+    padding:15px 15px;
+    font-size: 14px;
+    margin:8px 0;
+    background: #FDFBF9;
+    border-width: 0;
+    color: #888783;
+    opacity: 65%;
+}
+
+.payment .form-container form select option {
+    background: #FDFBF9;
+}
+
+.payment .form-container form p {
+    color: #888783;
+    text-align: left;
+}
+
+.payment .form-container form .form-btn {
+    background: #3C2F1C;
+    color: #FDFBF9;
+    width: 50%;
+    border-radius: 30px;
+    text-transform: none;
+    font-size: 14px;
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.payment .form-container form .form-btn:hover {
+    opacity: 75%;
+    background: #3C2F1C;
+    color: #FDFBF9;
+    transition: ease 0.5s;
 }

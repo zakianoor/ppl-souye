@@ -37,19 +37,19 @@
         <div class="product-card">
           <div class="product-image">
             <img src="assets/img/cream1.jpg" class="product-thumb" alt="">
-            <button class="card-btn">Rp109000</button>
+            <button class="card-btn">Rp109,000</button>
           </div>
         </div>
         <div class="product-card">
           <div class="product-image">
             <img src="assets/img/moist2.jpg" class="product-thumb" alt="">
-            <button class="card-btn">Rp249000</button>
+            <button class="card-btn">Rp249,000</button>
           </div>
         </div>
         <div class="product-card">
           <div class="product-image">
             <img src="assets/img/other1.jpg" class="product-thumb" alt="">
-            <button class="card-btn">Rp79000</button>
+            <button class="card-btn">Rp79,000</button>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
         </div>
         <div class="product-info">
           <p class="product-short-description">souye sleeping eye cover</p>
-          <span class="price">Rp79000</span>
+          <span class="price">Rp79,000</span>
         </div>
       </div>
       <div class="product-card">
@@ -79,7 +79,7 @@
         </div>
         <div class="product-info">
           <p class="product-short-description">souye niacinamide moisturizer</p>
-          <span class="price">Rp224100</span><span class="actual-price">Rp249000</span>
+          <span class="price">Rp224,100</span><span class="actual-price">Rp249,000</span>
         </div>
       </div>
       <div class="product-card">
@@ -89,7 +89,7 @@
         </div>
         <div class="product-info">
           <p class="product-short-description">souye hand cream</p>
-          <span class="price">Rp109000</span>
+          <span class="price">Rp109,000</span>
         </div>
       </div>
       <div class="product-card">
@@ -100,7 +100,7 @@
         </div>
         <div class="product-info">
           <p class="product-short-description">souye retinol moisturizer</p>
-          <span class="price">Rp211650</span><span class="actual-price">Rp249000</span>
+          <span class="price">Rp211,650</span><span class="actual-price">Rp249,000</span>
         </div>
       </div>
       <div class="product-card">
@@ -110,7 +110,7 @@
         </div>
         <div class="product-info">
           <p class="product-short-description">souye tea tree oil</p>
-          <span class="price">Rp299000</span>
+          <span class="price">Rp299,000</span>
         </div>
       </div>
     </div>
