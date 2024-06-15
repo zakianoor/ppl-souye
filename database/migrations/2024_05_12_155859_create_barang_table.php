@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('harga_brg');
             $table->integer('stok_brg');
             $table->string('img_brg');
-            $table->string('ket_brg');
+            $table->text('ket_brg');
             $table->unsignedBigInteger('id_kategori');
             $table->foreign('id_kategori')->references('id_kategori')->on('kategori');
+            $table->timestamps();
         });
     }
 

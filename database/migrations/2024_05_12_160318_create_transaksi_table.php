@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id('id_transaksi');
             $table->unsignedInteger('total_transaksi');
             $table->dateTime('tgl_transaksi')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->string('norek_buyer');
-            $table->string('namarek_buyer');
-            $table->string('bank_buyer');
+            $table->string('norek_buyer')->nullable();
+            $table->string('namarek_buyer')->nullable();
+            $table->string('bank_buyer')->nullable();
             $table->unsignedBigInteger('id_user');
             $table->string('nama_buyer');
             $table->text('alamat_buyer');
