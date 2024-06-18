@@ -73,7 +73,7 @@ class ProductSeeder extends Seeder
                 'nama_brg' => 'souye sleeping mask',
                 'harga_brg' => '209000',
                 'stok_brg' => 100,
-                'img_brg' => 'mask1.jpg',
+                'img_brg' => 'mask2.jpg',
                 'ket_brg' => 'indulge your skin in the restorative magic of souye sleeping mask. this luxurious overnight treatment works its wonders while you sleep, leaving you with a visibly renewed and refreshed complexion come morning. this mask helps regulate sebum production, minimizing the appearance of pores and blemishes for a clearer, smoother texture.',
                 'id_kategori' => 4
             ],
@@ -81,10 +81,18 @@ class ProductSeeder extends Seeder
                 'nama_brg' => 'souye gua sha',
                 'harga_brg' => '79000',
                 'stok_brg' => 100,
-                'img_brg' => 'other1.jpg',
+                'img_brg' => 'other2.jpg',
                 'ket_brg' => 'unveil the secret to a radiant complexion and holistic wellness with souye gua sha. meticulously crafted from high-quality jade, offering you a blend of traditional wisdom and modern luxury.',
                 'id_kategori' => 5
-            ]
+            ],
+            [
+                'nama_brg' => 'souye tea tree oil',
+                'harga_brg' => '219000',
+                'stok_brg' => 100,
+                'img_brg' => 'oil2.jpg',
+                'ket_brg' => 'unleash the power of nature\'s purifying hero with souye tea tree oil. this single-ingredient essential oil packs a punch when it comes to tackling blemishes and promoting a healthy, balanced complexion, can calm redness and irritation, leaving your skin feeling soothed and comfortable.',
+                'id_kategori' => 2
+            ],
         ]);
     }
 }

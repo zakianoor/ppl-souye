@@ -17,7 +17,7 @@ class KategoriSeeder extends Seeder
                 'nama_kategori' => 'moisturizer',  // untuk moisturizer
             ],
             [
-                'nama_kategori' => 'oil',  // untuk oil
+                'nama_kategori' => 'serum',  // untuk serum
             ],
             [
                 'nama_kategori' => 'cream',  // untuk cream

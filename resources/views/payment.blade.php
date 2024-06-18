@@ -6,14 +6,6 @@
 <section class="payment">
   <div class="form-container">
     <form>
-      <h2>Order Detail</h2>
-      <p>{{ $transaksi->nama_buyer }}</p>
-      <p>{{ $transaksi->alamat_buyer }}</p>
-      <p>{{ $transaksi->nohp_buyer }}</p>
-      <br>
-      <p><strong>date:</strong> {{ $transaksi->tgl_transaksi }}</p>
-      <p><strong>total:</strong> Rp{{ number_format($transaksi->total_transaksi) }}</p>
-      <input type="button" id="pay-button" name="order_btn" value="payment now!" class="form-btn">
     </form>
   </div>
 </section>
