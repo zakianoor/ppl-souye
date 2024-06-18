@@ -25,6 +25,7 @@ class Transaksi extends Model
         'nama_buyer',
         'alamat_buyer',
         'nohp_buyer',
+        'status',
         'order',
         'snap_token'
     ];

@@ -45,7 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/cart/{id}', [CartController::class, 'removeCart'])->name('removeCart');
     Route::post('/processCheckout', [CheckoutController::class, 'processCheckout'])->name('processCheckout');
     Route::get('/payment/{id}', [CheckoutController::class, 'showPayment'])->name('payment');
-    Route::get('/success', [CheckoutController::class, 'success'])->name('done');
+    Route::get('/payment/success/{id}', [CheckoutController::class, 'success'])->name('done');
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {

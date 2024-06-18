@@ -79,8 +79,13 @@ class CheckoutController extends Controller
         return view('payment', compact('transaksi'));
     }
 
-    public function success()
+    public function success($id_transaksi)
     {
+        $transaksi = Transaksi::find($id_transaksi);
+
+        $transaksi->status = 'paid';
+        $transaksi->save();
+        
         return view('done');
     }
 }

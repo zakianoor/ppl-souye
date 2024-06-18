@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('nama_buyer');
             $table->text('alamat_buyer');
             $table->string('nohp_buyer');
+            $table->string('status')->default('waiting_for_payment');
             $table->string('order')->nullable();
             $table->ipAddress('snap_token')->nullable();
 

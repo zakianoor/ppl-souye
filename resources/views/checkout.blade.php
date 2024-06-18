@@ -64,7 +64,7 @@ $grand_total = 0; // Initialize grand total
       <input type="hidden" name="grand_total" value="{{ $grand_total }}" />
       <h2>Complete Your Shiping Address</h2>
       <input type="text" name="nama" placeholder="full name" required=" ">
-      <input type="text" name="nohp" placeholder="phone number" required=" ">
+      <input type="tel" name="nohp" placeholder="phone number" required=" " pattern="[0-9]{10,15}">
       <input type="text" name="alamat" placeholder="address (city, province, zip code, etc)" required=" ">
       <input type="submit" name="order_btn" value="checkout now!" class="form-btn">
     </form>

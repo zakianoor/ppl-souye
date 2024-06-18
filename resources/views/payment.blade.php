@@ -25,7 +25,7 @@
     document.getElementById('pay-button').onclick = function(){
       snap.pay('{{ $transaksi->snap_token }}', {
         onSuccess: function(result){
-          window.location.href = '{{ route('done') }}'
+          window.location.href = '{{ route('done', $transaksi->id_transaksi) }}'
         },
         onPending: function(result){
           document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
