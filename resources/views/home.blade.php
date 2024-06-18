@@ -57,7 +57,7 @@
 </section>
 <section class="product" id="bestseller">
   <div class="content">
-    <h2 class="product-category">Best Sellers!</h2>
+    <h2 class="product-category" style="text-align: left; margin-left:-100px;">best sellers!</h2>
     <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
     <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
     <div class="product-container">

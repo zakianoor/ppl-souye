@@ -7,7 +7,7 @@
 @foreach($categories as $category)
 <section class="product">
     <div class="content">
-        <h2 class="product-category">{{ $category->nama_kategori }}</h2>
+        <h2 class="product-category" style="text-align: left; margin-left:-100px;">{{ $category->nama_kategori }}</h2>
         <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
         <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
         <div class="product-container">
