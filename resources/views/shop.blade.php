@@ -4,13 +4,14 @@
 
 @section('content')
 
+@foreach($categories as $category)
 <section class="product">
     <div class="content">
-        <h2 class="product-category">toner</h2>
+        <h2 class="product-category">{{ $category->nama_kategori }}</h2>
         <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
         <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
         <div class="product-container">
-            @foreach($shop as $product)
+            @foreach($category->products as $product)
                 <div class="product-card">
                 <div class="product-image">
                     <img src="/assets/img/{{ $product->img_brg }}" class="product-thumb" alt="">
@@ -34,7 +35,8 @@
             @endforeach
     </div>
 </section>
-<section class="product">
+@endforeach
+{{-- <section class="product">
     <div class="content">
         <h2 class="product-category">moisturizer</h2>
         <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
@@ -67,7 +69,7 @@
 </section>
 <section class="product">
     <div class="content">
-        <h2 class="product-category">serum</h2>
+        <h2 class="product-category">oil</h2>
         <button class="prev-btn"><img src="assets/img/arrow.png" alt=""></button>
         <button class="next-btn"><img src="assets/img/arrow.png" alt=""></button>
         <div class="product-container">
@@ -95,5 +97,5 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

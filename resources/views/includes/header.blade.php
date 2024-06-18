@@ -18,7 +18,7 @@
 
 <body>
     <nav>
-        <a href="{{ route('home') }}" ><img src="assets/img/logo.png"></a> 
+        <a href="{{ route('home') }}" ><img src="/assets/img/logo.png"></a> 
         <!-- <img src="assets/img/logo.png"> -->
         <ul>
             <li><a href="{{ route('shop') }}">shop</a></li>

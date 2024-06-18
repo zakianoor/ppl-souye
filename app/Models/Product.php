@@ -20,4 +20,9 @@ class Product extends Model
         'ket_brg',
         'id_kategori'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_kategori', 'id_kategori');
+    }
 }
