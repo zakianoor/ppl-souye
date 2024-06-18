@@ -440,6 +440,7 @@ button:hover {
     font-weight: 500;
     margin-bottom: 8px;
     text-transform: none;
+    text-align: left;
 }
 
 .cart-products {
