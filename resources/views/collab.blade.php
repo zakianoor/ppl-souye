@@ -17,19 +17,72 @@
     </div>
     <div class="content">
         <div class="collab-container">
-            @foreach($collab as $product)
             <div class="product-card">
                 <div class="product-image">
-                    <img src="/assets/img/{{ $product->img_brg }}" class="product-thumb" alt="">
+                    <img src="/assets/img/other1.jpg" class="product-thumb" alt="">
                     <form action="" method="">
                         @csrf
                         <fieldset>
-                            <input type="text" name="price" value="Rp{{ number_format($product->harga_brg) }}" class="card-btn"/>
+                            <input type="text" name="price" value="Rp79,000" class="card-btn"/>
                         </fieldset>
                     </form>
                 </div>
             </div>
-            @endforeach
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/cream2.jpg" class="product-thumb" alt="">
+                    <form action="" method="">
+                        @csrf
+                        <fieldset>
+                            <input type="text" name="price" value="Rp99,000" class="card-btn"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/mask1.jpg" class="product-thumb" alt="">
+                    <form action="" method="">
+                        @csrf
+                        <fieldset>
+                            <input type="text" name="price" value="Rp219,000" class="card-btn"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/oil1.jpg" class="product-thumb" alt="">
+                    <form action="" method="">
+                        @csrf
+                        <fieldset>
+                            <input type="text" name="price" value="Rp299,000" class="card-btn"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/moist2.jpg" class="product-thumb" alt="">
+                    <form action="" method="">
+                        @csrf
+                        <fieldset>
+                            <input type="text" name="price" value="Rp249,000" class="card-btn"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/assets/img/other2.jpg" class="product-thumb" alt="">
+                    <form action="" method="">
+                        @csrf
+                        <fieldset>
+                            <input type="text" name="price" value="Rp89,000" class="card-btn"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
